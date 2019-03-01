@@ -12,39 +12,28 @@ public class Main {
         Scanner scanIn = new Scanner(new File("sheet.txt"));
 
         scanIn.nextLine();
+        scanIn.useDelimiter(",");
+        ArrayList<Team> roster = new ArrayList<Team>();
 
-        FileWriter fw = new FileWriter("output.txt"); //page 142 in Blue Pelican
+
+
+/*        while (scanIn.hasNext())
+        {
+
+        }*/
+
+        FileWriter fw = new FileWriter("accounts.txt"); //page 142 in Blue Pelican
         PrintWriter pw = new PrintWriter(fw);
 
 
 
-        for(int i = 0; i < 29233; i++)
-        {
-            scanIn.nextLine();
-        }
-
-
-
-        //ArrayList<String> myTxt = new ArrayList<String>();
-
-        StringBuffer myTxt = new StringBuffer();
-
-        while (scanIn.hasNext())
-        {
-            myTxt.append("\n");
-            myTxt.append(scanIn.nextLine());
-        }
 
 
 
 
-        //System.out.println(myTxt);
-        pw.println(myTxt);
 
         fw.close();
         pw.close();
-
-
 
     }
 }
