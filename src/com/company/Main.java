@@ -17,26 +17,24 @@ public class Main {
 
 
 
+        Match.Game(1143, 1293);
 
 
 
 
 
-
-
+        /*
         FileWriter fw = new FileWriter("accounts.txt"); //page 142 in Blue Pelican
         PrintWriter pw = new PrintWriter(fw);
         StringBuffer otp = new StringBuffer();
 
 
-///*
-        //int it = 0;
+
+
         while(scanIn.hasNext())
         {
-            //roster.add(new Team(Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), scanIn.next(), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next()), Integer.parseInt(scanIn.next())));
             roster.add(new Team(scanIn.nextLine()));
-            //it++;
-            //System.out.println(it);
+
         }
 
 
@@ -44,18 +42,7 @@ public class Main {
         Collections.sort(roster);
         System.out.println(roster);
 
-//*/
 
-
-/*
-        while (scanIn.hasNext())
-        {
-            otp.append("\n" + scanIn.nextLine() + ",----,");
-        }
-
-
-        pw.print(otp);
-*/
 
 
         String temp;
@@ -84,11 +71,12 @@ public class Main {
 
 
         pw.print(otp.toString());
-        //System.out.println(otp.toString());
 
 
         fw.close();
         pw.close();
+
+        */
 
     }
 }
