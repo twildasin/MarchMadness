@@ -8,24 +8,21 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        Scanner scanIn = new Scanner(new File("sheet.txt"));
+        Scanner scanIn = new Scanner(new File("accounts.txt"));
 
         scanIn.nextLine();
         scanIn.useDelimiter(",");
 
         ArrayList<Team> roster = new ArrayList<>();
-
-
-
-        Match.Game(1155, 1243);
-        
+        ArrayList<Team> tour = new ArrayList<>();
+        //String [] grp;
 
 
 
 
 
-        /*
-        FileWriter fw = new FileWriter("accounts.txt"); //page 142 in Blue Pelican
+        ///*
+        FileWriter fw = new FileWriter("sheet.txt"); //page 142 in Blue Pelican
         PrintWriter pw = new PrintWriter(fw);
         StringBuffer otp = new StringBuffer();
 
@@ -45,7 +42,42 @@ public class Main {
 
 
 
+        ArrayList<Team> grp = new ArrayList<>();
 
+        //Match.Game(1155, 1243);
+
+        int tm = -1;
+        boolean firstTime = true;
+        Team selectTeam;
+        for(int i = 0; i < roster.size(); i++)
+        {
+            selectTeam = roster.get(i);
+            if(selectTeam.fir[2] == tm)
+            {
+                //Cholonk
+                grp.add(selectTeam);
+            }
+            else
+            {
+                if(!firstTime)
+                {
+                    tour.add(new Team(grp));
+                }
+                tm = selectTeam.fir[2];
+                grp.clear();
+                grp.add(selectTeam);
+            }
+            firstTime = false;
+        }
+        tour.add(new Team((grp)));
+
+        System.out.println(tour);
+        System.out.println(tour.size());
+
+        //System.out.println();
+
+
+        /*
         String temp;
         Team tp;
         for(int i = 0; i < roster.size(); i++)
@@ -76,8 +108,8 @@ public class Main {
 
         fw.close();
         pw.close();
-
         */
+        //*/
 
     }
 }

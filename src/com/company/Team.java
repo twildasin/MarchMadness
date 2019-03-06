@@ -1,5 +1,6 @@
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.Scanner;
 
@@ -33,6 +34,19 @@ public class Team implements Comparable
         }
     }
 
+    public Team (ArrayList<Team> temp)
+    {
+        int tot = 0;
+        Team mytemp;
+        for(int i = 0; i < temp.size(); i++)
+        {
+            mytemp = temp.get(i);
+            tot = tot + mytemp.fir[1];
+        }
+        tot = tot / temp.size();
+        fir[1] = tot;
+    }
+
     @Override
     public int compareTo(Object otherObject)
     {
@@ -53,6 +67,11 @@ public class Team implements Comparable
     @Override
     public String toString()
     {
-        return Integer.toString(this.fir[2]);
+        return Integer.toString(this.fir[1]);
+    }
+
+    public String printAvg()
+    {
+        return Integer.toString(this.fir[1]);
     }
 }
