@@ -26,6 +26,10 @@ public class Main {
         PrintWriter pw = new PrintWriter(fw);
         StringBuffer otp = new StringBuffer();
 
+        FileWriter fw2 = new FileWriter("Averages.txt"); //page 142 in Blue Pelican
+        PrintWriter pw2 = new PrintWriter(fw);
+        StringBuffer otp2 = new StringBuffer();
+
 
 
 
@@ -38,7 +42,7 @@ public class Main {
 
 
         Collections.sort(roster);
-        System.out.println(roster);
+        //System.out.println(roster);
 
 
 
@@ -71,44 +75,44 @@ public class Main {
         }
         tour.add(new Team((grp)));
 
-        System.out.println(tour);
-        System.out.println(tour.size());
+        //System.out.println(tour);
+        //System.out.println(tour.size());
 
         //System.out.println();
 
 
-        /*
-        String temp;
+        ///*
+        //String temp;
         Team tp;
-        for(int i = 0; i < roster.size(); i++)
+        for(int i = 0; i < tour.size(); i++)
         {
-            tp = roster.get(i);
+            tp = tour.get(i);
 
             for(int k = 0; k < 6; k++)
             {
-                otp.append(Integer.toString(tp.fir[k]));
-                otp.append(",");
+                otp2.append(Integer.toString(tp.fir[k]));
+                otp2.append(",");
             }
 
-            otp.append(tp.str);
-            otp.append(",");
+            otp2.append(tp.str);
+            otp2.append(",");
 
             for(int k = 0; k < 27; k++)
             {
-                otp.append(Integer.toString(tp.sec[k]));
-                otp.append(",");
+                otp2.append(Integer.toString(tp.sec[k]));
+                otp2.append(",");
             }
 
-            otp.append("\n");
+            otp2.append("\n");
         }
 
 
-        pw.print(otp.toString());
+        pw2.print(otp2.toString());
+        System.out.println(otp2.toString());
 
-
-        fw.close();
-        pw.close();
-        */
+        fw2.close();
+        pw2.close();
+        //*/
         //*/
 
     }

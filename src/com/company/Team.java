@@ -36,15 +36,32 @@ public class Team implements Comparable
 
     public Team (ArrayList<Team> temp)
     {
-        int tot = 0;
-        Team mytemp;
-        for(int i = 0; i < temp.size(); i++)
+
+        for(int j = 0; j < 6; j++)
         {
-            mytemp = temp.get(i);
-            tot = tot + mytemp.fir[1];
+            int tot = 0;
+            Team mytemp;
+            for (int i = 0; i < temp.size(); i++) {
+                mytemp = temp.get(i);
+                tot = tot + mytemp.fir[j];
+            }
+            tot = tot / temp.size();
+            fir[j] = tot;
         }
-        tot = tot / temp.size();
-        fir[1] = tot;
+
+        str = "n";
+
+        for(int j = 0; j < 27; j++)
+        {
+            int tot = 0;
+            Team mytemp;
+            for (int i = 0; i < temp.size(); i++) {
+                mytemp = temp.get(i);
+                tot = tot + mytemp.sec[j];
+            }
+            tot = tot / temp.size();
+            sec[j] = tot;
+        }
     }
 
     @Override
