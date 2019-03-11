@@ -75,7 +75,7 @@ public class Main {
         }
         tour.add(new Team((grp)));
 
-        //System.out.println(tour);
+        System.out.println(tour);
         //System.out.println(tour.size());
 
         //System.out.println();
@@ -103,7 +103,7 @@ public class Main {
                 otp2.append(",");
             }
 
-            otp2.append("\n");
+            otp2.append("\n" + (i +1) + "\t");
         }
 
 
@@ -114,6 +114,13 @@ public class Main {
         pw2.close();
         //*/
         //*/
+
+
+        //System.out.println(Match.Game(tour.get(326), tour.get(286), 1));
+        //System.out.println(Match.Game(tour.get(326), tour.get(4), 1));
+        System.out.println(Match.Game(tour.get(286), tour.get(326), 1));
+
+
 
     }
 }

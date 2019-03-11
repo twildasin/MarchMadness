@@ -68,10 +68,10 @@ public class Match {
         int t2t = 0;
 
         // Keeps track of which team has won previous games
-        int winning;
+        int winning = 0;
 
         // Calls method above to see which team has won previous games
-        winning = Match.findGame(t1.fir[2], t2.fir[2]);
+        //winning = Match.findGame(t1.fir[2], t2.fir[2]);
 
         if(winning > 0) // If team 1 one
         {
@@ -102,51 +102,78 @@ public class Match {
                 mt1 = mt1 * 100;
                 mt2 = mt2 * 100;
 
-                switch (i)
-                {
-                    case 0:
-                        mt1 = mt1 * 10;
-                        mt2 = mt2 * 10;
-                        break;
-                    case 1:
-                        mt1 = mt1 * 10;
-                        mt2 = mt2 * 10;
-                        break;
-
-                }
 
             }
-            else // Where larger is better
+            else // Where larger is better (aka always)
             {
-                if()
-                mt1 = t1.sec[i];
-                mt2 = t2.sec[i];
-
-
-
-                double com = mt1 + mt2;
-
-                mt1 = mt1/com;
-                mt2 = mt2/com;
-
-                mt1 = mt1 * 100;
-                mt2 = mt2 * 100;
-
-                switch (i)
+                if(i == 1 || i == 3 || i ==5)
                 {
-                    case 0:
-                        mt1 = mt1 * 10;
-                        mt2 = mt2 * 10;
-                        break;
-                    case 1:
-                        mt1 = mt1 * 10;
-                        mt2 = mt2 * 10;
-                        break;
+                    mt1 = (double) t1.sec[i] / t1.sec[i + 1];
+                    mt2 = (double) t2.sec[i] / t2.sec[i + 1];
 
+
+                    double com = mt1 + mt2;
+
+                    mt1 = mt1 / com;
+                    mt2 = mt2 / com;
+
+                    mt1 = mt1 * 100;
+                    mt2 = mt2 * 100;
+
+                    i++;
                 }
+
+                else
+                {
+                    mt1 = t1.sec[i];
+                    mt2 = t2.sec[i];
+
+
+                    double com = mt1 + mt2;
+
+                    mt1 = mt1 / com;
+                    mt2 = mt2 / com;
+
+                    mt1 = mt1 * 100;
+                    mt2 = mt2 * 100;
+                }
+
+
+
+
 
             }
 
+            if(i == 1)
+            {
+                t1t = t1t + ( (int) mt1 * 10);
+                t2t = t2t + ( (int) mt2 * 10);
+            }
+            else if(i == 3 || i == 5)
+            {
+                t1t = t1t + ( (int) mt1 * 7);
+                t2t = t2t + ( (int) mt2 * 7);
+            }
+            else if(i == 7)
+            {
+                t1t = t1t + ( (int) mt1 * 6);
+                t2t = t2t + ( (int) mt2 * 6);
+            }
+            else if(i == 10)
+            {
+                t1t = t1t + ( (int) mt1 * 4);
+                t2t = t2t + ( (int) mt2 * 4);
+            }
+            else if(i == 13)
+            {
+                t1t = t1t + ( (int) mt1 * 2);
+                t2t = t2t + ( (int) mt2 * 2);
+            }
+            else if(i == 8 || i == 9 || i == 11|| i == 12)
+            {
+                t1t = t1t + ( (int) mt1);
+                t2t = t2t + ( (int) mt2);
+            }
 
 
 
@@ -162,5 +189,7 @@ public class Match {
 
 
         }
+
+        return "Team 1: " + t1t + "\tTeam 2: " + t2t;
     }
 }
