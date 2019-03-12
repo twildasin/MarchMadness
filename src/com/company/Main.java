@@ -8,57 +8,65 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+
+        //region declaring stuff
+
+        // Scans a file with every march madness game
         Scanner scanIn = new Scanner(new File("accounts.txt"));
 
+        //Skips line with titles in it
         scanIn.nextLine();
+
+        // I don't need to explain this...
         scanIn.useDelimiter(",");
 
+        //Used to store each line of the text file
+        // (store each GAME)
         ArrayList<Team> roster = new ArrayList<>();
+
+        //Used to store team averages
+        // (store each TEAM)
         ArrayList<Team> tour = new ArrayList<>();
-        //String [] grp;
+
+
+        //endregion
 
 
 
-
-
-        ///*
-        FileWriter fw = new FileWriter("sheet.txt"); //page 142 in Blue Pelican
-        PrintWriter pw = new PrintWriter(fw);
-        StringBuffer otp = new StringBuffer();
-
-        StringBuffer otp2 = new StringBuffer();
-
-
-
-
-        // Adds every line on the accounts file (sorted by team ID) to an array called roster
+        // Adds every of test file to a position iun the Team array
         while(scanIn.hasNext())
         {
+            // One of the constructors takes a string and will parse all the data into the correct state variables
             roster.add(new Team(scanIn.nextLine()));
         }
 
 
-
-        Collections.sort(roster);
-        //System.out.println(roster);
-
+        //Used to sort text file (if we need to add data and use again)
+        //Collections.sort(roster);
 
 
+        //region Condense game stats to team stats
+
+
+        // Temporary array list stores collection of one team's stats (objects) to get condensed to one object
         ArrayList<Team> grp = new ArrayList<>();
 
-        //Match.Game(1155, 1243);
-
+        // Stores current team's ID
         int tm = -1;
+        //First time finding a new team ID
         boolean firstTime = true;
+        //Stores temporarily a team to add to temporary array list
         Team selectTeam;
         for(int i = 0; i < roster.size(); i++)
         {
             selectTeam = roster.get(i);
+            //If same team ID, just add that to temp array list
             if(selectTeam.fir[2] == tm)
             {
                 //Cholonk
                 grp.add(selectTeam);
             }
+            //If new team ID, finalize the array list (send it to a method) and clear it and prepare for new team's data
             else
             {
                 if(!firstTime)
@@ -71,17 +79,22 @@ public class Main {
             }
             firstTime = false;
         }
+        // Adds the combined team's averages to one final array list
         tour.add(new Team((grp)));
 
         System.out.println(tour);
-        //System.out.println(tour.size());
 
-        //System.out.println();
+        //endregion
 
 
-        ///*
-        //String temp;
+        //region Print out positions in array list
+
+        /*
+
+        StringBuffer otp2 = new StringBuffer();
+
         Team tp;
+        otp2.append("0,");
         for(int i = 0; i < tour.size(); i++)
         {
             tp = tour.get(i);
@@ -101,16 +114,16 @@ public class Main {
                 otp2.append(",");
             }
 
-            otp2.append("\n" + (i +1) + "\t");
+            if(i != tour.size()-1)
+                otp2.append("\n" + (i +1) + ",");
         }
-
 
 
         System.out.println(otp2.toString());
 
+        */
 
-        //*/
-        //*/
+        //endregion
 
 
         //System.out.println(Match.Game(tour.get(326), tour.get(286), 1));

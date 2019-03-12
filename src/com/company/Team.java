@@ -8,7 +8,7 @@ public class Team implements Comparable
 {
 
 
-
+    //Store each data point in a line of the text file
     int [] fir = new int[6];
     String str;
     int [] sec = new int[28];
@@ -16,26 +16,32 @@ public class Team implements Comparable
 
 
 
+    //First constructor
     public Team (String line)
-    {
+    {   //Accepts one String (line in text file) and makes it into one object
         Scanner sf = new Scanner(line);
         sf.useDelimiter(",");
 
+        //First 6 data points to first int array
         for (int i = 0; i < 6; i++)
         {
             fir[i] = Integer.parseInt(sf.next());
         }
 
+        //String to string
         str = sf.next();
 
+        //Last ints to a different int array
         for (int i = 0; i < 27; i++)
         {
             sec[i] = Integer.parseInt(sf.next());
         }
     }
 
+    //Second constructor (overloading)
     public Team (ArrayList<Team> temp)
-    {
+    {    //Accepts an array list of the same team and will find their averages and combine them into one object
+
         int year;
         double weigh = 0;
 
@@ -48,7 +54,7 @@ public class Team implements Comparable
                 mytemp = temp.get(i);
 
 
-                ///*
+                //region Weigh by
                 year = mytemp.fir[0];
                 if(j != 2)
                 {
@@ -143,11 +149,7 @@ public class Team implements Comparable
                         weigh = 0.40;
                         break;
 
-
                 }
-
-
-
 
                 tot = tot + (int) (((double) mytemp.sec[j] * weigh) * 100);
             }
