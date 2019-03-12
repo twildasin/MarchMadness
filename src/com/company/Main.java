@@ -26,17 +26,15 @@ public class Main {
         PrintWriter pw = new PrintWriter(fw);
         StringBuffer otp = new StringBuffer();
 
-        FileWriter fw2 = new FileWriter("Averages.txt"); //page 142 in Blue Pelican
-        PrintWriter pw2 = new PrintWriter(fw);
         StringBuffer otp2 = new StringBuffer();
 
 
 
 
+        // Adds every line on the accounts file (sorted by team ID) to an array called roster
         while(scanIn.hasNext())
         {
             roster.add(new Team(scanIn.nextLine()));
-
         }
 
 
@@ -107,11 +105,10 @@ public class Main {
         }
 
 
-        pw2.print(otp2.toString());
+
         System.out.println(otp2.toString());
 
-        fw2.close();
-        pw2.close();
+
         //*/
         //*/
 
