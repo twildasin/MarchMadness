@@ -126,12 +126,34 @@ public class Main {
         //endregion
 
 
+
+
+
+        StringBuffer gui = new StringBuffer();
+        FileWriter fw3 = new FileWriter("NameTeam.txt");
+        PrintWriter pw3 = new PrintWriter(fw3);
+        Scanner poop = new Scanner(new File("SheetData.txt"));
+
+        gui.append(poop.nextLine());
+
+        while(poop.hasNext())
+        {
+            gui.append("\n,");
+            gui.append(poop.nextLine());
+        }
+
+
+
+
+
+
         //System.out.println(Match.Game(tour.get(326), tour.get(286), 1));
         System.out.println(Match.Game(tour.get(326), tour.get(4), 1)); //Nova v AL (easy win)
         //System.out.println(Match.Game(tour.get(286), tour.get(326), 1));
         System.out.println(Match.Game(tour.get(326), tour.get(327), 1)); //Nova v VA (close game)
 
-
+    fw3.close();
+    pw3.close();
 
     }
 }

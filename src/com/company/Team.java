@@ -54,10 +54,11 @@ public class Team implements Comparable
                 mytemp = temp.get(i);
 
 
-                //region Weigh by
+                //region Weigh by year
                 year = mytemp.fir[0];
                 if(j != 2)
                 {
+                    //Gives more recent years a stronger influence on the predicted winner
                     switch (year) {
                         case 2010:
                             weigh = 0.01;
@@ -90,6 +91,8 @@ public class Team implements Comparable
 
                     }
                 }
+
+                //endregion yea
 
                 //*/
                 if(j != 2)
