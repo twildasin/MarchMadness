@@ -1,5 +1,7 @@
 package com.company;
 
+import jdk.jshell.spi.ExecutionControlProvider;
+
 import java.io.*;
 import java.io.IOException;
 import java.util.*;
@@ -7,6 +9,7 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
+
 
 
         //region declaring stuff
@@ -126,23 +129,82 @@ public class Main {
         //endregion
 
 
+        Team [] aDiv = new Team [16];
+        Team [] bDiv = new Team [16];
+        Team [] cDiv = new Team [16];
+        Team [] dDiv = new Team [16];
 
-
-
-        StringBuffer gui = new StringBuffer();
-        FileWriter fw3 = new FileWriter("NameTeam.txt");
-        PrintWriter pw3 = new PrintWriter(fw3);
-        Scanner poop = new Scanner(new File("SheetData.txt"));
-
-        gui.append(poop.nextLine());
-
-        while(poop.hasNext())
+        for(int i = 0; i < 16; i++)
         {
-            gui.append("\n,");
-            gui.append(poop.nextLine());
+            aDiv[i] = null;
+            bDiv[i] = null;
+            cDiv[i] = null;
+            dDiv[i] = null;
         }
 
 
+        Scanner  findpos = new Scanner(new File("NameTeam.txt"));
+        String tempLine;
+        Scanner scanLine;
+        String sortThis;
+        int scanTeamID;
+        Team scanTeam = null;
+        findpos.nextLine();
+
+
+        while(findpos.hasNext())
+        {
+            tempLine = findpos.nextLine();
+
+            if(!(tempLine.substring(0,1)).equals(","))
+            {
+                scanLine = new Scanner(tempLine);
+                scanLine.useDelimiter(",");
+                sortThis = scanLine.next();
+                scanTeamID = Integer.parseInt(scanLine.next());
+                int rankNum = Integer.parseInt(sortThis.substring(1,sortThis.length())) - 1;
+
+                for(int i = 0; i < tour.size(); i++)
+                {
+                    scanTeam = tour.get(i);
+                    if(scanTeam.fir[2] == scanTeamID)
+                        break;
+                    else if (i == tour.size() - 1)
+                        throw new IOException("Okay so we did something wrong...");
+                }
+
+
+                if(sortThis.substring(0,1).equalsIgnoreCase("a"))
+                {
+                    aDiv[rankNum] = scanTeam;
+                }
+                else if(sortThis.substring(0,1).equalsIgnoreCase("b"))
+                {
+                    bDiv[rankNum] = scanTeam;
+                }
+                else if(sortThis.substring(0,1).equalsIgnoreCase("c"))
+                {
+                    cDiv[rankNum] = scanTeam;
+                }
+                else if(sortThis.substring(0,1).equalsIgnoreCase("d"))
+                {
+                    dDiv[rankNum] = scanTeam;
+                }
+            }
+        }
+
+
+        for(Team x : aDiv)
+        {
+            try
+            {
+                System.out.println(x.fir[2]);
+            }
+            catch (NullPointerException e)
+            {
+                System.out.println("0");
+            }
+        }
 
 
 
@@ -151,9 +213,6 @@ public class Main {
         System.out.println(Match.Game(tour.get(326), tour.get(4), 1)); //Nova v AL (easy win)
         //System.out.println(Match.Game(tour.get(286), tour.get(326), 1));
         System.out.println(Match.Game(tour.get(326), tour.get(327), 1)); //Nova v VA (close game)
-
-    fw3.close();
-    pw3.close();
 
     }
 }
