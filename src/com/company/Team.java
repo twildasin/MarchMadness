@@ -50,41 +50,50 @@ public class Team implements Comparable
 
                 ///*
                 year = mytemp.fir[0];
-                switch (year)
+                if(j != 2)
                 {
-                    case 2010:
-                        weigh = 0.01;
-                        break;
-                    case 2011:
-                        weigh = 0.02;
-                        break;
-                    case 2012:
-                        weigh = 0.03;
-                        break;
-                    case 2013:
-                        weigh = 0.04;
-                        break;
-                    case 2014:
-                        weigh = 0.05;
-                        break;
-                    case 2015:
-                        weigh = 0.10;
-                        break;
-                    case 2016:
-                        weigh = 0.15;
-                        break;
-                    case 2017:
-                        weigh = 0.20;
-                        break;
-                    case 2018:
-                        weigh = 0.40;
-                        break;
+                    switch (year) {
+                        case 2010:
+                            weigh = 0.01;
+                            break;
+                        case 2011:
+                            weigh = 0.02;
+                            break;
+                        case 2012:
+                            weigh = 0.03;
+                            break;
+                        case 2013:
+                            weigh = 0.04;
+                            break;
+                        case 2014:
+                            weigh = 0.05;
+                            break;
+                        case 2015:
+                            weigh = 0.10;
+                            break;
+                        case 2016:
+                            weigh = 0.15;
+                            break;
+                        case 2017:
+                            weigh = 0.20;
+                            break;
+                        case 2018:
+                            weigh = 0.40;
+                            break;
 
 
+                    }
                 }
 
                 //*/
-                tot = tot + (int) (((double) mytemp.fir[j] * weigh) * 100);
+                if(j != 2)
+                {
+                    tot = tot + (int) (((double) mytemp.fir[j] * weigh) * 100);
+                }
+                else
+                {
+                    tot = tot + mytemp.fir[j];
+                }
             }
             tot = tot / temp.size();
             fir[j] = tot;
