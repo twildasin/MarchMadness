@@ -85,7 +85,7 @@ public class Main {
         // Adds the combined team's averages to one final array list
         tour.add(new Team((grp)));
 
-        System.out.println(tour);
+        //System.out.println(tour);
 
         //endregion
 
@@ -128,6 +128,8 @@ public class Main {
 
         //endregion
 
+
+        //region Input position in bracket
 
         Team [] aDiv = new Team [16];
         Team [] bDiv = new Team [16];
@@ -173,6 +175,8 @@ public class Main {
                         throw new IOException("Okay so we did something wrong...");
                 }
 
+                scanTeam.teamName = scanLine.next();
+
 
                 if(sortThis.substring(0,1).equalsIgnoreCase("a"))
                 {
@@ -194,19 +198,21 @@ public class Main {
         }
 
 
+
+        //For testing purposes only (print array)
         for(Team x : aDiv)
         {
             try
             {
-                System.out.println(x.fir[2]);
+                System.out.println(x.teamName + "\t" + x.fir[2]);
             }
             catch (NullPointerException e)
             {
-                System.out.println("0");
+                System.out.println("Null\t0");
             }
         }
 
-
+        //endregion
 
 
         //System.out.println(Match.Game(tour.get(326), tour.get(286), 1));

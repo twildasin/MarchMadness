@@ -172,7 +172,7 @@ TeamID,TeamName,FirstD1Season,LastD1Season
 ,1271,MD E Shore,1985,2019
 ,1272,Memphis,1985,2019
 ,1273,Mercer,1985,2019
-,1274,Miami FL,1986,2019
+a2,1274,Miami FL,1986,2019
 ,1275,Miami OH,1985,2019
 ,1276,Michigan,1985,2019
 ,1277,Michigan St,1985,2019
@@ -276,7 +276,7 @@ TeamID,TeamName,FirstD1Season,LastD1Season
 ,1375,South Alabama,1985,2019
 ,1376,South Carolina,1985,2019
 ,1377,South Dakota,2009,2019
-a5,1378,South Florida,1985,2019
+,1378,South Florida,1985,2019
 ,1379,Southern Miss,1985,2019
 ,1380,Southern Univ,1985,2019
 ,1381,Southern Utah,1989,2019

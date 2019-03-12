@@ -13,6 +13,8 @@ public class Team implements Comparable
     String str;
     int [] sec = new int[28];
 
+    String teamName;
+
 
 
 
