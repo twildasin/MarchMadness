@@ -66,6 +66,8 @@ public class Match {
     // Big method that compares different data points to return which team would be most likely to win the game
     public static String Game (Team t1, Team t2, int round) throws IOException
     {
+        //region Analyze stats
+
         //Final variables used to determine which team wins (values added based on multiple data points)
         int t1t = 0;
         int t2t = 0;
@@ -206,7 +208,78 @@ public class Match {
 
         }
 
+        //endregion
 
+
+        //region Upset
+
+        int upset;
+        int difference = Math.abs(t1t - t2t);
+        Random ran = new Random();
+
+
+
+        //region Version 2.0
+
+        /*
+        upset = ran.nextInt(difference);
+
+        // Gives a chance for upset using difference between two teams (ex 2 in ____ chance of winning --> blank being difference between two teams)
+        if(upset >= 0 && upset < 6)
+        {
+            System.out.println("\n\nUpset");
+            if(t1t > t2t)
+            {
+                t2t = t2t + difference + 1;
+            }
+            else if(t2t > t1t)
+            {
+                t1t = t1t + difference +1;
+            }
+        }
+        */
+        //endregion
+
+
+        if(difference < 10)
+        {
+            upset = ran.nextInt(2); // 50 %
+        }
+        else if(difference < 25)
+        {
+            upset = ran.nextInt(4); // 25 %
+        }
+        else if(difference < 50)
+        {
+            upset = ran.nextInt(10); // 10 %
+        }
+        else if(difference < 100)
+        {
+            upset = ran.nextInt(20); // 5 %
+        }
+        else
+        {
+            upset = ran.nextInt(50); // 2 %
+        }
+
+        if(upset == 0)
+        {
+            System.out.println("\n\nUpset");
+            if(t1t > t2t)
+            {
+                t2t = t2t + difference + 1;
+            }
+            else if(t2t > t1t)
+            {
+                t1t = t1t + difference +1;
+            }
+        }
+
+
+
+
+        //region old version
+        /*
 
 
         int upset1;
@@ -218,31 +291,31 @@ public class Match {
         boundary = ran.nextInt(100);
         boundary2 = ran.nextInt(100);
 
-        boolean per2 = false;
-        boolean per8 = false;
-        boolean per15 = false;
-        boolean per25 = false;
-        boolean per50 = false;
+        if (boundary < boundary2)
+        {
+
+        }
+
 
         if(boundary < 2) // 2%
         {
-            per2 = true;
+
         }
         else if(boundary < 10) // 8%
         {
-            per8 = true;
+
         }
         else if(boundary < 25) // 15%
         {
-            per15 = true;
+
         }
         else if(boundary < 50) // 25%
         {
-            per25 = true;
+
         }
         else if(boundary < 100) // 50%
         {
-            per50 = true;
+
         }
 
         if(boundary2 < 2) // 2%
@@ -266,6 +339,26 @@ public class Match {
 
         }
 
-        return "Team 1: " + t1t + "\tTeam 2: " + t2t;
+
+        */
+
+        //endregion
+
+
+        //endregion
+
+
+        System.out.println("\nTeam 1: " + t1t);
+        System.out.println("Team 2: " + t2t + "\n");
+
+        if(t1t > t2t)
+        {
+            return t1.teamName + " Wins!";
+        }
+        else
+        {
+            return t2.teamName + " Wins!";
+        }
+        //return "Team 1: " + t1t + "\tTeam 2: " + t2t;
     }
 }

@@ -214,9 +214,10 @@ public class Main {
 
 
         //System.out.println(Match.Game(tour.get(326), tour.get(286), 1));
-        System.out.println(Match.Game(tour.get(326), tour.get(4), 1)); //Nova v AL (easy win)
+        //System.out.println(Match.Game(tour.get(326), tour.get(4), 1)); //Nova v AL (easy win)
         //System.out.println(Match.Game(tour.get(286), tour.get(326), 1));
-        System.out.println(Match.Game(tour.get(326), tour.get(327), 1)); //Nova v VA (close game)
+        //System.out.println(Match.Game(tour.get(326), tour.get(327), 1)); //Nova v VA (close game)
+        System.out.println(Match.Game(aDiv[0], aDiv[1], 1)); //Entity 0 and 1 of aDivision (aDiv) array
 
     }
 }

@@ -140,7 +140,7 @@ TeamID,TeamName,FirstD1Season,LastD1Season
 ,1239,Jacksonville,1985,2019
 ,1240,Jacksonville St,1996,2019
 ,1241,James Madison,1985,2019
-a1,1242,Kansas,1985,2019
+,1242,Kansas,1985,2019
 ,1243,Kansas St,1985,2019
 ,1244,Kennesaw,2006,2019
 ,1245,Kent,1985,2019
@@ -172,7 +172,7 @@ a1,1242,Kansas,1985,2019
 ,1271,MD E Shore,1985,2019
 ,1272,Memphis,1985,2019
 ,1273,Mercer,1985,2019
-a2,1274,Miami FL,1986,2019
+,1274,Miami FL,1986,2019
 ,1275,Miami OH,1985,2019
 ,1276,Michigan,1985,2019
 ,1277,Michigan St,1985,2019
@@ -212,7 +212,7 @@ a2,1274,Miami FL,1986,2019
 ,1311,Nicholls St,1985,2019
 ,1312,NJIT,2007,2019
 ,1313,Norfolk St,1998,2019
-,1314,North Carolina,1985,2019
+a2,1314,North Carolina,1985,2019
 ,1315,North Dakota,2009,2019
 ,1316,North Florida,2006,2019
 ,1317,North Texas,1985,2019
@@ -299,7 +299,7 @@ a2,1274,Miami FL,1986,2019
 ,1398,Tennessee St,1985,2019
 ,1399,Tennessee Tech,1985,2019
 ,1400,Texas,1985,2019
-,1401,Texas A&M,1985,2019
+a1,1401,Texas A&M,1985,2019
 ,1402,Texas St,1985,2019
 ,1403,Texas Tech,1985,2019
 ,1404,TN Martin,1993,2019
