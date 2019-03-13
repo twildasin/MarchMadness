@@ -206,6 +206,66 @@ public class Match {
 
         }
 
+
+
+
+        int upset1;
+        int boundary;
+        int boundary2;
+        int difference = Math.abs(t1t = t2t);
+        Random ran = new Random();
+
+        boundary = ran.nextInt(100);
+        boundary2 = ran.nextInt(100);
+
+        boolean per2 = false;
+        boolean per8 = false;
+        boolean per15 = false;
+        boolean per25 = false;
+        boolean per50 = false;
+
+        if(boundary < 2) // 2%
+        {
+            per2 = true;
+        }
+        else if(boundary < 10) // 8%
+        {
+            per8 = true;
+        }
+        else if(boundary < 25) // 15%
+        {
+            per15 = true;
+        }
+        else if(boundary < 50) // 25%
+        {
+            per25 = true;
+        }
+        else if(boundary < 100) // 50%
+        {
+            per50 = true;
+        }
+
+        if(boundary2 < 2) // 2%
+        {
+
+        }
+        else if(boundary2 < 10) // 8%
+        {
+
+        }
+        else if(boundary2 < 25) // 15%
+        {
+
+        }
+        else if(boundary2 < 50) // 25%
+        {
+
+        }
+        else if(boundary2 < 100) // 50%
+        {
+
+        }
+
         return "Team 1: " + t1t + "\tTeam 2: " + t2t;
     }
 }

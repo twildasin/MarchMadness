@@ -140,7 +140,7 @@ TeamID,TeamName,FirstD1Season,LastD1Season
 ,1239,Jacksonville,1985,2019
 ,1240,Jacksonville St,1996,2019
 ,1241,James Madison,1985,2019
-,1242,Kansas,1985,2019
+a1,1242,Kansas,1985,2019
 ,1243,Kansas St,1985,2019
 ,1244,Kennesaw,2006,2019
 ,1245,Kent,1985,2019
