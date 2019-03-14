@@ -359,16 +359,18 @@ public class Match {
 
         //endregion
 
-        System.out.println("\nTeam 1: " + t1t);
-        System.out.println("Team 2: " + t2t + "\n");
+        //System.out.println("\nTeam 1: " + t1t);
+        //System.out.println("Team 2: " + t2t + "\n");
 
         if(t1t > t2t)
         {
+            System.out.println(t1.teamName + " beat " + t2.teamName);
             return t1;
             //return t1.teamName + " Wins!";
         }
         else
         {
+            System.out.println(t2.teamName + " beat " + t1.teamName);
             return t2;
             //return t2.teamName + " Wins!";
         }

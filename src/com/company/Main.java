@@ -253,11 +253,37 @@ public class Main {
         //endregion
 
 
-
+        int rep = 15;
         for(int i = 0; i < 8; i++)
         {
-            aDiv2[i] =
+            aDiv2[i] = Match.Game(aDiv[i], aDiv[rep], 1);
+            //bDiv2[i] = Match.Game(bDiv[i], bDiv[rep], 1);
+            //cDiv2[i] = Match.Game(cDiv[i], cDiv[rep], 1);
+            //dDiv2[i] = Match.Game(dDiv[i], dDiv[rep], 1);
+            rep--;
         }
+
+        rep = 7;
+        for(int i = 0; i < 4; i++)
+        {
+            aDiv3[i] = Match.Game(aDiv2[i], aDiv2[rep], 1);
+            //bDiv3[i] = Match.Game(bDiv2[i], bDiv2[rep], 1);
+            //cDiv3[i] = Match.Game(cDiv2[i], cDiv2[rep], 1);
+            //dDiv3[i] = Match.Game(dDiv2[i], dDiv2[rep], 1);
+            rep--;
+        }
+
+        rep = 3;
+        for(int i = 0; i < 2; i++)
+        {
+            aDiv4[i] = Match.Game(aDiv3[2*i], aDiv3[(2*i) +1], 1);
+            //bDiv4[i] = Match.Game(bDiv3[2*i], bDiv3[(2*i) +1], 1);
+            //cDiv4[i] = Match.Game(cDiv3[2*i], cDiv3[(2*i) +1], 1);
+            //dDiv4[i] = Match.Game(dDiv3[2*i], dDiv3[(2*i) +1], 1);
+            rep--;
+        }
+
+
 
 
         //System.out.println(Match.Game(tour.get(326), tour.get(286), 1));
