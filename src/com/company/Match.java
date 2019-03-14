@@ -218,7 +218,6 @@ public class Match {
         Random ran = new Random();
 
 
-
         //region Version 2.0
 
         /*
@@ -240,6 +239,7 @@ public class Match {
         */
         //endregion
 
+        //region Version 3.0
 
         if(difference < 10)
         {
@@ -275,10 +275,9 @@ public class Match {
             }
         }
 
+        //endregion
 
-
-
-        //region old version
+        //region Version 1.0
         /*
 
 
@@ -347,7 +346,6 @@ public class Match {
 
         //endregion
 
-
         System.out.println("\nTeam 1: " + t1t);
         System.out.println("Team 2: " + t2t + "\n");
 
@@ -359,6 +357,7 @@ public class Match {
         {
             return t2.teamName + " Wins!";
         }
+
         //return "Team 1: " + t1t + "\tTeam 2: " + t2t;
     }
 }
