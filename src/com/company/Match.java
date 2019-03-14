@@ -83,6 +83,8 @@ public class Match {
         // Calls method above to see which team has won previous games
         winning = Match.findGame(t1.fir[2], t2.fir[2]);
 
+
+
         // If team 1 beat team 2 before, give them some points
         if(winning > 0)
             t1t++;
@@ -210,6 +212,17 @@ public class Match {
 
         //endregion
 
+        //Soooooooooooooooo... the data from last years HUGE upset (UMBC) skewed the entire data so this skews it back
+        //If we were to get all math-y with this, we should actually use the MEDIAN of the data, not the MEAN
+        //...Buts that's above my pay grade so yeah these 8 lines are easier than changing our entire averaging algorithm
+        if(t1.fir[2] == 1420)
+        {
+            t1t = t1t - 70;
+        }
+        else if(t2.fir[2] == 1420)
+        {
+            t2t = t2t - 70;
+        }
 
         //region Upset
 
