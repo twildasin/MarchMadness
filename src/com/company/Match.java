@@ -64,7 +64,7 @@ public class Match {
     }
 
     // Big method that compares different data points to return which team would be most likely to win the game
-    public static String Game (Team t1, Team t2, int round) throws IOException
+    public static Team Game (Team t1, Team t2, int round) throws IOException
     {
         //region Analyze stats
 
@@ -364,11 +364,13 @@ public class Match {
 
         if(t1t > t2t)
         {
-            return t1.teamName + " Wins!";
+            return t1;
+            //return t1.teamName + " Wins!";
         }
         else
         {
-            return t2.teamName + " Wins!";
+            return t2;
+            //return t2.teamName + " Wins!";
         }
 
         //return "Team 1: " + t1t + "\tTeam 2: " + t2t;

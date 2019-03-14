@@ -7,8 +7,9 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) throws IOException {
-
-
+        int n = 300;
+        double eeee = Math.pow((1 + (1/n)), n);
+        System.out.println(Math.exp(1));
 
         //region declaring stuff
 
@@ -134,6 +135,21 @@ public class Main {
         Team [] cDiv = new Team [16];
         Team [] dDiv = new Team [16];
 
+        Team [] aDiv2 = new Team [8];
+        Team [] bDiv2 = new Team [8];
+        Team [] cDiv2 = new Team [8];
+        Team [] dDiv2 = new Team [8];
+
+        Team [] aDiv3 = new Team [4];
+        Team [] bDiv3 = new Team [4];
+        Team [] cDiv3 = new Team [4];
+        Team [] dDiv3 = new Team [4];
+
+        Team [] aDiv4 = new Team [2];
+        Team [] bDiv4 = new Team [2];
+        Team [] cDiv4 = new Team [2];
+        Team [] dDiv4 = new Team [2];
+
         for(int i = 0; i < 16; i++)
         {
             aDiv[i] = null;
@@ -212,6 +228,7 @@ public class Main {
 
         //endregion
 
+        //region Cholonk
         /*
         MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
@@ -233,6 +250,15 @@ public class Main {
         MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM
         */
+        //endregion
+
+
+
+        for(int i = 0; i < 8; i++)
+        {
+            aDiv2[i] =
+        }
+
 
         //System.out.println(Match.Game(tour.get(326), tour.get(286), 1));
         //System.out.println(Match.Game(tour.get(326), tour.get(4), 1)); //Nova v AL (easy win)
