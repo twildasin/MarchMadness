@@ -12,6 +12,7 @@ public class Team implements Comparable
     int [] fir = new int[6];
     String str;
     int [] sec = new int[28];
+    int seed;
 
     String teamName;
 

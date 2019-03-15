@@ -190,6 +190,7 @@ public class Main {
                 }
 
                 scanTeam.teamName = scanLine.next();
+                scanTeam.seed = rankNum + 1;
 
 
                 if(sortThis.substring(0,1).equalsIgnoreCase("a"))
@@ -254,6 +255,7 @@ public class Main {
 
 
         int rep = 15;
+        System.out.println("\nRound 1");
         for(int i = 0; i < 8; i++)
         {
             aDiv2[i] = Match.Game(aDiv[i], aDiv[rep], 1);
@@ -263,25 +265,32 @@ public class Main {
             rep--;
         }
 
+        System.out.println("\nRound 2");
         rep = 7;
         for(int i = 0; i < 4; i++)
         {
-            aDiv3[i] = Match.Game(aDiv2[i], aDiv2[rep], 1);
-            //bDiv3[i] = Match.Game(bDiv2[i], bDiv2[rep], 1);
-            //cDiv3[i] = Match.Game(cDiv2[i], cDiv2[rep], 1);
-            //dDiv3[i] = Match.Game(dDiv2[i], dDiv2[rep], 1);
+            aDiv3[i] = Match.Game(aDiv2[i], aDiv2[rep], 2);
+            //bDiv3[i] = Match.Game(bDiv2[i], bDiv2[rep], 2);
+            //cDiv3[i] = Match.Game(cDiv2[i], cDiv2[rep], 2);
+            //dDiv3[i] = Match.Game(dDiv2[i], dDiv2[rep], 2);
             rep--;
         }
 
+        System.out.println("\nRound 3");
         rep = 3;
         for(int i = 0; i < 2; i++)
         {
-            aDiv4[i] = Match.Game(aDiv3[2*i], aDiv3[(2*i) +1], 1);
-            //bDiv4[i] = Match.Game(bDiv3[2*i], bDiv3[(2*i) +1], 1);
-            //cDiv4[i] = Match.Game(cDiv3[2*i], cDiv3[(2*i) +1], 1);
-            //dDiv4[i] = Match.Game(dDiv3[2*i], dDiv3[(2*i) +1], 1);
+            aDiv4[i] = Match.Game(aDiv3[2*i], aDiv3[rep], 3);
+            //bDiv4[i] = Match.Game(bDiv3[2*i], bDiv3[rep], 3);
+            //cDiv4[i] = Match.Game(cDiv3[2*i], cDiv3[rep], 3);
+            //dDiv4[i] = Match.Game(dDiv3[2*i], dDiv3[rep], 3);
             rep--;
         }
+
+        Team aDivChamp = Match.Game(aDiv4[0], aDiv4[1], 4);
+        Team bDivChamp = Match.Game(bDiv4[0], bDiv4[1], 4);
+        Team cDivChamp = Match.Game(cDiv4[0], cDiv4[1], 4);
+        Team dDivChamp = Match.Game(dDiv4[0], dDiv4[1], 4);
 
 
 
@@ -290,7 +299,7 @@ public class Main {
         //System.out.println(Match.Game(tour.get(326), tour.get(4), 1)); //Nova v AL (easy win)
         //System.out.println(Match.Game(tour.get(286), tour.get(326), 1));
         //System.out.println(Match.Game(tour.get(326), tour.get(327), 1)); //Nova v VA (close game)
-        System.out.println(Match.Game(aDiv[0], aDiv[1], 1)); //Entity 0 and 1 of aDivision (aDiv) array
+        //System.out.println(Match.Game(aDiv[0], aDiv[1], 1)); //Entity 0 and 1 of aDivision (aDiv) array
 
     }
 }
