@@ -259,9 +259,9 @@ public class Main {
         for(int i = 0; i < 8; i++)
         {
             aDiv2[i] = Match.Game(aDiv[i], aDiv[rep], 1);
-            //bDiv2[i] = Match.Game(bDiv[i], bDiv[rep], 1);
-            //cDiv2[i] = Match.Game(cDiv[i], cDiv[rep], 1);
-            //dDiv2[i] = Match.Game(dDiv[i], dDiv[rep], 1);
+            bDiv2[i] = Match.Game(bDiv[i], bDiv[rep], 1);
+            cDiv2[i] = Match.Game(cDiv[i], cDiv[rep], 1);
+            dDiv2[i] = Match.Game(dDiv[i], dDiv[rep], 1);
             rep--;
         }
 
@@ -270,9 +270,9 @@ public class Main {
         for(int i = 0; i < 4; i++)
         {
             aDiv3[i] = Match.Game(aDiv2[i], aDiv2[rep], 2);
-            //bDiv3[i] = Match.Game(bDiv2[i], bDiv2[rep], 2);
-            //cDiv3[i] = Match.Game(cDiv2[i], cDiv2[rep], 2);
-            //dDiv3[i] = Match.Game(dDiv2[i], dDiv2[rep], 2);
+            bDiv3[i] = Match.Game(bDiv2[i], bDiv2[rep], 2);
+            cDiv3[i] = Match.Game(cDiv2[i], cDiv2[rep], 2);
+            dDiv3[i] = Match.Game(dDiv2[i], dDiv2[rep], 2);
             rep--;
         }
 
@@ -280,17 +280,26 @@ public class Main {
         rep = 3;
         for(int i = 0; i < 2; i++)
         {
-            aDiv4[i] = Match.Game(aDiv3[2*i], aDiv3[rep], 3);
-            //bDiv4[i] = Match.Game(bDiv3[2*i], bDiv3[rep], 3);
-            //cDiv4[i] = Match.Game(cDiv3[2*i], cDiv3[rep], 3);
-            //dDiv4[i] = Match.Game(dDiv3[2*i], dDiv3[rep], 3);
+            aDiv4[i] = Match.Game(aDiv3[i], aDiv3[rep], 3);
+            bDiv4[i] = Match.Game(bDiv3[i], bDiv3[rep], 3);
+            cDiv4[i] = Match.Game(cDiv3[i], cDiv3[rep], 3);
+            dDiv4[i] = Match.Game(dDiv3[i], dDiv3[rep], 3);
             rep--;
         }
 
+        System.out.println("\nRound 4");
         Team aDivChamp = Match.Game(aDiv4[0], aDiv4[1], 4);
         Team bDivChamp = Match.Game(bDiv4[0], bDiv4[1], 4);
         Team cDivChamp = Match.Game(cDiv4[0], cDiv4[1], 4);
         Team dDivChamp = Match.Game(dDiv4[0], dDiv4[1], 4);
+
+        System.out.println("\nRound 5");
+        Team abChamp = Match.Game(aDivChamp, bDivChamp, 5);
+        Team cdChamp = Match.Game(cDivChamp, dDivChamp, 5);
+
+        System.out.println("\nRound 6");
+        Team Champ = Match.Game(abChamp, cdChamp, 6);
+
 
 
 

@@ -212,20 +212,30 @@ public class Match {
 
         //endregion
 
-        /*
+        ///*
         //Soooooooooooooooo... the data from last years HUGE upset (UMBC) skewed the entire data so this skews it back
         //If we were to get all math-y with this, we should actually use the MEDIAN of the data, not the MEAN
         //...Buts that's above my pay grade so yeah these 8 lines are easier than changing our entire averaging algorithm
-        if(t1.fir[2] == 1420)
+        if(t1.fir[2] == 1452)
         {
             t1t = t1t - 70;
         }
-        else if(t2.fir[2] == 1420)
+        else if(t2.fir[2] == 1452)
         {
             t2t = t2t - 70;
         }
-        */
 
+        if(t1.fir[2] == 1437)
+        {
+            t1t = t1t + 25;
+        }
+        else if(t2.fir[2] == 1437)
+        {
+            t2t = t2t + 25;
+        }
+        //*/
+
+        ///*
         if(round == 1)
         {
             t1t = t1t - (t1.seed * 5);
@@ -233,19 +243,20 @@ public class Match {
         }
         else if (round == 2)
         {
-            t1t = t1t - (t1.seed * 4);
-            t2t = t2t - (t2.seed * 4);
+            t1t = t1t - (t1.seed * 5);
+            t2t = t2t - (t2.seed * 5);
         }
         else if (round == 3)
         {
-            t1t = t1t - (t1.seed * 3);
-            t2t = t2t - (t2.seed * 3);
+            t1t = t1t - (t1.seed * 5);
+            t2t = t2t - (t2.seed * 5);
         }
         else if (round == 4)
         {
-            t1t = t1t - (t1.seed * 2);
-            t2t = t2t - (t2.seed * 2);
+            t1t = t1t - (t1.seed * 5);
+            t2t = t2t - (t2.seed * 5);
         }
+        //*/
 
 
 
